@@ -77,7 +77,7 @@ function title_out() {
 
 
 function rod_big() {
-    $("#rod").delay(4000).animate({
+    $("#rod").delay(4500).animate({
         "width": "400",
         "opacity": "0"
     }, 2000, "easeOutExpo");
@@ -85,7 +85,7 @@ function rod_big() {
 
 
 function end() {
-    $('#title').queue(function () {
+    $('#title').delay(900).queue(function () {
         document.getElementById("title").classList.toggle("none");
         document.getElementById("back").classList.toggle("none");
         document.getElementById("back2").classList.toggle("none");

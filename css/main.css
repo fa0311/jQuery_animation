@@ -65,19 +65,3 @@
             vertical-align: middle;
         }
         
-        .fixed_head {
-            position: fixed;
-            background-color: black;
-            width: 100%;
-            height: 0px;
-            top: 0px;
-            left: 0px;
-        }
-
-        .fixed_title {
-            position: fixed;
-            color: white;
-            top: -30px;
-            left: 20px;
-            font-family: Courier New;
-        }

@@ -11,182 +11,20 @@
     <meta name="description" content="yuki0311.comのホーム">
     <meta name="keywords" content="pikapika,ふぁ,a810810931931">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="jquery.easing.1.3.js"></script>
-    <style>
-        .title {
-            position: absolute;
-            bottom: 35%;
-            margin: 0px;
-            left: 50%;
-            -webkit-transform: translate(-50%, 50%);
-            transform: translate(-50%, 50%);
-            opacity: 0;
-        }
-
-        .none {
-            display: none;
-        }
-
-        .rod {
-            opacity: 0;
-            width: 0px;
-            height: 2px;
-            background-color: black;
-            position: absolute;
-            bottom: 50%;
-            left: 50%;
-            -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-        }
-
-        .back {
-            background-color: white;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            height: 50%;
-            width: 100%;
-            -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-        }
-
-        .back2 {
-            background-color: white;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            height: 50%;
-            width: 100%;
-            -webkit-transform: translate(-50%, 0);
-            transform: translate(-50%, 0);
-            z-index: -5;
-        }
-
-        .sub_title {
-            position: absolute;
-            top: 45%;
-            margin: 0px;
-            left: 70%;
-            -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            z-index: -10;
-        }
-
-        .twitterimg {
-            height: 1.2em;
-            margin: 1px;
-            vertical-align: middle;
-        }
-    </style>
-    <script>
-        var $titleAnim = $.Deferred(function (deferredAnim) {
-            deferredAnim.then(title)
-                .then(rod)
-                .then(back_none1)
-                .then(sub_title)
-                .then(sub_title_out)
-                .then(back_none2)
-                .then(title_out)
-                .then(rod_big)
-                .then(end)
-        });
-
-
-
-
-
-        window.onload = function () {
-            $titleAnim.resolve()
-        }
-
-
-        function title() {
-            document.getElementById("title").classList.toggle("none");
-            $("#title").delay(200).animate({
-                "bottom": "54%",
-                "opacity": "1"
-            }, 1500, "easeOutExpo");
-        }
-
-        function rod() {
-            $("#rod").animate({
-                "width": "350",
-                "opacity": "1"
-            }, 2000, "easeOutExpo");
-        }
-
-
-
-
-        function back_none1() {
-            $('#back').delay(1200).queue(function () {
-                document.getElementById("back").classList.toggle("none");
-            });
-        }
-
-
-        function sub_title() {
-            $("#sub_title").delay(1200).animate({
-                "top": "54%",
-                "opacity": "1"
-            }, 1500, "easeOutExpo");
-        }
-
-
-        function sub_title_out() {
-
-            $("#sub_title").delay(1200).animate({
-                "top": "40%",
-                "opacity": "1"
-            }, 1500, "easeInExpo");
-        }
-
-        function back_none2() {
-            $('#back2').delay(5500).queue(function () {
-                document.getElementById("back").classList.toggle("none");
-            });
-        }
-
-        function title_out() {
-            $("#title").delay(4000).animate({
-                "top": "65%",
-                "opacity": "0"
-            }, 1000, "easeInExpo");
-        }
-
-
-
-        function rod_big() {
-            $("#rod").delay(4000).animate({
-                "width": "400",
-                "opacity": "0"
-            }, 2000, "easeOutExpo");
-        }
-
-
-        function end() {
-            $('#title').queue(function () {
-                document.getElementById("title").classList.toggle("none");
-                document.getElementById("back").classList.toggle("none");
-                document.getElementById("back2").classList.toggle("none");
-                document.getElementById("sub_title").classList.toggle("none");
-                document.getElementById("rod").classList.toggle("none");
-            });
-        }
-
-
-
-    </script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <h1 class="title none" id="title">yuki0311.com</h1>
-    <p class="sub_title" id="sub_title"><img class="twitterimg" id="twitterimg" src="./twitter.png">@a810810931931
+    <p class="sub_title" id="sub_title"><img class="twitterimg" id="twitterimg" src="./img/twitter.png">@a810810931931
     </p>
     <div class="rod" id="rod"></div>
     <div class="back" id="back"></div>
     <div class="back2" id="back2"></div>
+    <div class="fixed_head" id="fixed_head"></div>
+    <div class="fixed_title" id="fixed_title">yuki0311.com</div>
 </body>
 
 </html>
